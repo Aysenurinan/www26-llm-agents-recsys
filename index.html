@@ -15,26 +15,42 @@
     section {margin:40px 0;}
     .abstract-card {background:#f9fafb; padding:20px; border-radius:10px; border:1px solid #e5e7eb; box-shadow:0 2px 6px rgba(0,0,0,0.05);}
 
-    /* Hero header with background image */
+    /* Hero header with faint Dubai background image */
     .hero {
-      background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80');
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1526481280698-8fccf3f3a3f1?auto=format&fit=crop&w=1600&q=80');
       background-size: cover;
       background-position: center;
       color: white;
       text-align: center;
       padding: 100px 20px;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
       border-bottom: 1px solid rgba(255,255,255,0.2);
+      overflow: hidden;
     }
-    .hero h1 {font-size: 2.5rem; margin-bottom: 10px;}
-    .hero h3 {font-weight: 400; margin-top: 0;}
+
+    /* Faint overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.35); /* faint dark overlay */
+      backdrop-filter: brightness(0.8);
+      z-index: 0;
+    }
+
+    .hero .container {position: relative; z-index: 1;}
+    .hero h1 {font-size: 2.5rem; margin-bottom: 10px; text-shadow: 0 2px 6px rgba(0,0,0,0.4);} 
+    .hero h3 {font-weight: 400; margin-top: 0; text-shadow: 0 2px 6px rgba(0,0,0,0.4);} 
   </style>
 </head>
 <body>
   <header class="hero">
     <div class="container">
       <h1>LLM & Agents for Recommendation Systems</h1>
-      <h3>The Web Conference 2026 (WWW’26)</h3>
+      <h3>The Web Conference 2026 (WWW’26) • Dubai, UAE</h3>
     </div>
   </header>
 
