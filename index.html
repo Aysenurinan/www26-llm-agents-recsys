@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Workshop Title – Conference Year</title>
+  <meta name="description" content="Workshop on XYZ at Conference YYYY" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff; --fg: #111827; --muted:#4b5563; --brand:#0b6cff; --accent:#0ea5e9; --border:#e5e7eb; --card:#f9fafb;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+    a{color:#0b6cff;text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1080px,92%);margin:0 auto}
+
+    /* Top bar like Google Sites */
+    header.nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--border);z-index:30}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .brand{display:flex;align-items:center;gap:.6rem}
+    .brand .title{font-weight:700;font-size:18px;margin:0}
+    nav.links{display:flex;gap:1rem;flex-wrap:wrap}
+    nav.links a{padding:.4rem .6rem;border-radius:8px}
+    nav.links a.active, nav.links a:hover{background:var(--card)}
+
+    /* Hero header */
+    .hero{padding:42px 0 18px;border-bottom:1px solid var(--border)}
+    .hero h1{font-family:Merriweather, serif;font-size:clamp(28px,5vw,42px);margin:6px 0 8px}
+    .hero .sub{color:var(--muted)}
+    .badges{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:10px}
+    .badge{background:#eef2ff;border:1px solid #e5e7eb;color:#1f2937;border-radius:999px;padding:.25rem .6rem;font-size:.85rem}
+
+    section{padding:34px 0}
+    .section-title{font-weight:700;font-size:22px;margin:0 0 12px}
+    .grid{display:grid;gap:16px}
+    @media(min-width:760px){.grid.cols-2{grid-template-columns:repeat(2,1fr)}.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+    .card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px}
+
+    /* People blocks */
+    .person{display:flex;gap:.8rem;align-items:flex-start}
+    .avatar{width:60px;height:60px;border-radius:6px;border:1px solid var(--border);object-fit:cover;background:#f3f4f6}
+    .person h4{margin:0 0 2px;font-size:16px}
+    .person .meta{color:var(--muted);font-size:.9rem}
+
+    /* Schedule */
+    .schedule{display:grid;gap:10px}
+    .slot{display:grid;grid-template-columns:120px 1fr;gap:10px;align-items:start;border-bottom:1px dashed var(--border);padding:10px 0}
+    .time{font-weight:700}
+    @media(max-width:560px){.slot{grid-template-columns:1fr}}
+
+    /* Program Committee list */
+    .pc-list{columns:2;column-gap:24px}
+    @media(max-width:680px){.pc-list{columns:1}}
+    .pc-list li{break-inside:avoid;margin-bottom:6px}
+
+    footer{border-top:1px solid var(--border);padding:24px 0;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <img alt="logo" src="https://placehold.co/28x28" width="28" height="28" style="border-radius:6px;border:1px solid var(--border)"/>
+        <p class="title" id="brandTitle">Workshop on XYZ</p>
+      </div>
+      <nav class="links">
+        <a href="#home" class="active">Home</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#cfp">Call for Papers</a>
+        <a href="#organizers">Organizing Committee</a>
+        <a href="#pc">Program Committee</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="badges">
+        <span class="badge" id="confBadge">Conference • Year</span>
+        <span class="badge" id="dateBadge">Date</span>
+        <span class="badge" id="venueBadge">Venue</span>
+      </div>
+      <h1 id="title">NeurIPS‑style Workshop Title (Concise)</h1>
+      <p class="sub" id="intro">A short paragraph describing the workshop aim, relevance, and scope in a neutral tone similar to Google Sites.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- Speakers section like the reference site -->
+    <section id="speakers">
+      <h2 class="section-title">Speakers</h2>
+      <div class="grid cols-3" id="speakerList"></div>
+    </section>
+
+    <section id="panel">
+      <h2 class="section-title">Panel</h2>
+      <div class="grid cols-3" id="panelList"></div>
+    </section>
+
+    <section id="schedule">
+      <h2 class="section-title">Schedule</h2>
+      <div class="card schedule" id="scheduleList"></div>
+      <p style="color:var(--muted)">All times are local to the conference venue.</p>
+    </section>
+
+    <section id="cfp">
+      <h2 class="section-title">Call for Papers</h2>
+      <div class="card" id="cfpText">Submission site (OpenReview/CMT) • Topics of interest • Important dates • Submission format • Reviewing policy • Contact.</div>
+    </section>
+
+    <section id="organizers">
+      <h2 class="section-title">Organizing Committee</h2>
+      <div class="grid cols-3" id="orgList"></div>
+    </section>
+
+    <section id="pc">
+      <h2 class="section-title">Program Committee</h2>
+      <div class="card">
+        <ul class="pc-list" id="pcList"></ul>
+      </div>
+    </section>
+
+    <section id="sponsors">
+      <h2 class="section-title">Sponsors</h2>
+      <div class="grid cols-3" id="sponsorList"></div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="card">Questions? Email <a id="contactEmail" href="mailto:workshop@yourdomain.org">workshop@yourdomain.org</a>.</div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;gap:.8rem;align-items:center;flex-wrap:wrap">
+        <span>© <span id="year"></span> <span id="footerTitle">Workshop Title</span></span>
+        <span>•</span>
+        <a href="#home">Home</a><span>•</span>
+        <a href="#schedule">Schedule</a><span>•</span>
+        <a href="#organizers">Organizers</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // === CONTENT (edit here) ===
+    const data = {
+      brandTitle: "NeurIPS 2025 Workshop",
+      title: "Generative AI in Finance",
+      intro: "This workshop fosters cross‑disciplinary collaboration at the intersection of generative AI and finance, highlighting theory, implementations, opportunities, and open challenges.",
+      conference: { name: "NeurIPS", year: "2025" },
+      date: "December 6, 2025 (Saturday)",
+      venue: "San Diego Convention Center",
+      contactEmail: "workshop@yourdomain.org",
+      speakers: [
+        { name:"Rama Cont", role:"Oxford • Math Finance & ML", img:"https://placehold.co/160x160", bio:"Professor of Mathematics; research in stochastic analysis, ML in finance.", url:"#" },
+        { name:"Furong Huang", role:"UMD • Trustworthy ML", img:"https://placehold.co/160x160", bio:"Associate Professor; trustworthy ML, sequential decision‑making.", url:"#" },
+        { name:"Bayan Bruss", role:"Capital One • AI for FS", img:"https://placehold.co/160x160", bio:"VP AI Foundations; translates research to financial services.", url:"#" }
+      ],
+      panel: [
+        { name:"Prakash Arunachalam", role:"BNY Mellon", img:"https://placehold.co/160x160" },
+        { name:"Benika Hall", role:"NVIDIA", img:"https://placehold.co/160x160" },
+        { name:"Dianqi Li", role:"Citadel Securities", img:"https://placehold.co/160x160" }
+      ],
+      schedule: [
+        { time:"09:00 – 09:10", title:"Opening Remarks", who:"Organizers" },
+        { time:"09:10 – 10:00", title:"Keynote #1", who:"Invited Speaker" },
+        { time:"10:00 – 10:40", title:"Contributed Talks I", who:"Authors" },
+        { time:"10:40 – 11:00", title:"Coffee Break", who:"—" },
+        { time:"11:00 – 11:50", title:"Keynote #2", who:"Invited Speaker" },
+        { time:"11:50 – 12:30", title:"Poster Fast‑Forward", who:"Authors" },
+        { time:"12:30 – 14:00", title:"Lunch", who:"—" },
+        { time:"14:00 – 15:00", title:"Panel", who:"All Speakers" },
+        { time:"15:00 – 15:40", title:"Contributed Talks II", who:"Authors" },
+        { time:"15:40 – 16:00", title:"Coffee Break", who:"—" },
+        { time:"16:00 – 16:40", title:"Breakouts & Discussion", who:"All Attendees" },
+        { time:"16:40 – 17:00", title:"Closing", who:"Organizers" }
+      ],
+      cfpHTML: "<p>Topics include (but are not limited to): LLMs for markets, RAG for finance, stress testing with generative models, compliance‑aware AI, robust evaluation. Submit via <a href=\"#\" target=\"_blank\">OpenReview</a>. Formatting: 4‑page extended abstract, references unlimited. Double‑blind review.</p>",
+      organizers: [
+        { name:"Lead Chair", role:"Affiliation", img:"https://placehold.co/120x120", url:"#" },
+        { name:"Co‑Chair", role:"Affiliation", img:"https://placehold.co/120x120", url:"#" },
+        { name:"Co‑Chair", role:"Affiliation", img:"https://placehold.co/120x120", url:"#" }
+      ],
+      pc: [
+        "Firstname Lastname, Institution", "Firstname Lastname, Institution", "Firstname Lastname, Institution",
+        "Firstname Lastname, Institution", "Firstname Lastname, Institution", "Firstname Lastname, Institution"
+      ],
+      sponsors: [
+        { name:"Sponsor A", img:"https://placehold.co/200x80", url:"#" },
+        { name:"Sponsor B", img:"https://placehold.co/200x80", url:"#" },
+        { name:"Sponsor C", img:"https://placehold.co/200x80", url:"#" }
+      ]
+    };
+
+    // === RENDER ===
+    const $ = (s)=>document.querySelector(s);
+    const el=(t,a={},c=[])=>{const n=document.createElement(t);Object.entries(a).forEach(([k,v])=>{if(k==='class')n.className=v;else if(k==='html')n.innerHTML=v;else n.setAttribute(k,v)});c.forEach(x=>n.appendChild(typeof x==='string'?document.createTextNode(x):x));return n};
+
+    // header badges
+    $('#brandTitle').textContent = data.brandTitle;
+    $('#title').textContent = data.title;
+    $('#intro').textContent = data.intro;
+    $('#confBadge').textContent = `${data.conference.name} • ${data.conference.year}`;
+    $('#dateBadge').textContent = data.date; $('#venueBadge').textContent = data.venue;
+    $('#contactEmail').textContent = data.contactEmail; $('#contactEmail').href = `mailto:${data.contactEmail}`;
+
+    // speakers
+    const sp = $('#speakerList'); sp.innerHTML = '';
+    data.speakers.forEach(p=>{
+      sp.appendChild(el('div',{class:'card'},[
+        el('div',{class:'person'},[
+          el('img',{class:'avatar',src:p.img,alt:p.name}),
+          el('div',{},[
+            el('h4',{},[p.name]),
+            el('div',{class:'meta'},[p.role]),
+            el('p',{},[p.bio||'']) ,
+            el('div',{},[el('a',{href:p.url,target:'_blank',rel:'noopener'},['Homepage'])])
+          ])
+        ])
+      ]));
+    });
+
+    // panel
+    const pan = $('#panelList'); pan.innerHTML = '';
+    data.panel.forEach(p=>{
+      pan.appendChild(el('div',{class:'card'},[
+        el('div',{class:'person'},[
+          el('img',{class:'avatar',src:p.img,alt:p.name}),
+          el('div',{},[
+            el('h4',{},[p.name]),
+            el('div',{class:'meta'},[p.role])
+          ])
+        ])
+      ]));
+    });
+
+    // schedule
+    const sched = $('#scheduleList'); sched.innerHTML = '';
+    data.schedule.forEach(s=>{
+      sched.appendChild(el('div',{class:'slot'},[
+        el('div',{class:'time'},[s.time]),
+        el('div',{},[el('div',{style:'font-weight:700'},[s.title]), el('div',{class:'meta'},[s.who])])
+      ]));
+    });
+
+    // CFP
+    document.getElementById('cfpText').innerHTML = data.cfpHTML;
+
+    // organizers
+    const org = $('#orgList'); org.innerHTML = '';
+    data.organizers.forEach(p=>{
+      org.appendChild(el('div',{class:'card'},[
+        el('div',{class:'person'},[
+          el('img',{class:'avatar',src:p.img,alt:p.name}),
+          el('div',{},[
+            el('h4',{},[p.name]),
+            el('div',{class:'meta'},[p.role]),
+            el('div',{},[el('a',{href:p.url,target:'_blank',rel:'noopener'},['Profile'])])
+          ])
+        ])
+      ]));
+    });
+
+    // PC
+    const pc = $('#pcList'); pc.innerHTML = '';
+    data.pc.forEach(x=> pc.appendChild(el('li',{},[x])) );
+
+    // sponsors
+    const sps = $('#sponsorList'); sps.innerHTML = '';
+    data.sponsors.forEach(s=>{
+      sps.appendChild(el('a',{href:s.url,target:'_blank',rel:'noopener',class:'card'},[
+        el('img',{src:s.img,alt:s.name,style:'width:100%;height:64px;object-fit:contain'})
+      ]));
+    });
+
+    // footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('footerTitle').textContent = data.title;
+  </script>
+</body>
+</html>
