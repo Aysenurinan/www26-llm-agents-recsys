@@ -89,29 +89,30 @@
   </footer>
 
   <script>
-    const SPEAKERS = [
-      {
-        name: "Prof. Ranjay Krishna",
-        role: "University of Washington — RAIVN Lab Co-Director",
-        img: "./assets/speakers/ranjay-krishna.jpeg",
-        bio: "Assistant Professor and co-director of the RAIVN Lab. His research bridges vision, language, and human-AI interaction, creating systems that see and communicate like people.",
-        link: "https://ranjaykrishna.com/index.html"
-      },
-      {
-        name: "Shivani Poddar",
-        role: "Google DeepMind — Jules GenAI Engineering Lead",
-        img: "./assets/speakers/Shivani-Poddar.jpeg",
-        bio: "Engineering Lead addressing coordination across user-facing agents and safety systems at scale. Previously built multi-agent conversational AI at Meta.",
-        link: "https://www.linkedin.com/in/shivani-poddar/"
-      },
-      {
-        name: "Prof. Hanan Salam",
-        role: "NYU Abu Dhabi — SMART Lab Director",
-        img: "./assets/speakers/Hanan-Salam.jpeg",
-        bio: "Assistant Professor and SMART Lab Director investigating coordination, trust, and explainability in multi-agent systems. Co-founder of Women in AI and UNESCO AI Ethics Expert.",
-        link: "http://www.hanansalam.com/"
-      }
-    ];
+  const SPEAKERS = [
+    {
+      name: "Prof. Ranjay Krishna",
+      role: "University of Washington — RAIVN Lab Co-Director",
+      img: "./assets/speakers/ranjay-krishna.jpeg",   // exact file name
+      bio: "Assistant Professor and co-director of the RAIVN Lab. His research bridges vision, language, and human-AI interaction, creating systems that see and communicate like people.",
+      link: "https://ranjaykrishna.com/index.html"
+    },
+    {
+      name: "Shivani Poddar",
+      role: "Google DeepMind — Jules GenAI Engineering Lead",
+      img: "./assets/speakers/Shivani-Poddar.jpeg",   // capital S and P
+      bio: "Engineering Lead addressing coordination across user-facing agents and safety systems at scale. Previously built multi-agent conversational AI at Meta.",
+      link: "https://www.linkedin.com/in/shivani-poddar/"
+    },
+    {
+      name: "Prof. Hanan Salam",
+      role: "NYU Abu Dhabi — SMART Lab Director",
+      img: "./assets/speakers/Hanan-Salam.jpeg",      // capital H and S
+      bio: "Assistant Professor and SMART Lab Director investigating coordination, trust, and explainability in multi-agent systems. Co-founder of Women in AI and UNESCO AI Ethics Expert.",
+      link: "http://www.hanansalam.com/"
+    }
+  ];
+
 
     function loadSpeakerImage(imgEl, basePathOrFull) {
       const hasExt = /\.[a-z]{3,4}$/i.test(basePathOrFull);
