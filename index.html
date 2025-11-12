@@ -30,10 +30,17 @@
     @media(min-width:720px){.people-grid{grid-template-columns:repeat(3,1fr)}}
     @media(min-width:1024px){.people-grid{grid-template-columns:repeat(3,1fr)}}
 
-    /* Make entire card clickable */
-    .person-card{display:flex; flex-direction:column; align-items:center; gap:12px; background:#fff; border:1px solid #e5e7eb; border-radius:14px; padding:18px; text-align:center; box-shadow:0 2px 6px rgba(0,0,0,.05); transition:transform .12s ease, box-shadow .12s ease}
-    .person-card:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.08)}
-    .person-card:focus-visible{outline:3px solid #2563eb; outline-offset:2px}
+    /* Clickable speaker cards */
+    a.person-card{
+      display:flex; flex-direction:column; align-items:center; gap:12px;
+      background:#fff; border:1px solid #e5e7eb; border-radius:14px; padding:18px;
+      text-align:center; box-shadow:0 2px 6px rgba(0,0,0,.05);
+      transition:transform .12s ease, box-shadow .12s ease;
+      text-decoration:none; color:inherit; cursor:pointer;
+    }
+    a.person-card:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.08)}
+    a.person-card:focus-visible{outline:3px solid #2563eb; outline-offset:2px}
+    a.person-card > *{pointer-events:none}
 
     .avatar{width:160px; height:160px; border-radius:12px; object-fit:cover; background:#e5e7eb; border:1px solid #e5e7eb}
     .person-card h4{margin:0 0 2px; font-size:18px}
@@ -73,14 +80,13 @@
   </footer>
 
   <script>
-    // ====== SPEAKERS DATA ======
     const SPEAKERS = [
       {
         name: "Prof. Ranjay Krishna",
         role: "University of Washington — RAIVN Lab Co-Director",
         img: "./assets/speakers/ranjay-krishna.jpg",
         bio: "Assistant Professor and co-director of the RAIVN Lab. His research bridges vision, language, and human-AI interaction, creating systems that see and communicate like people.",
-        link: "https://ranjaykrishna.com/index.html" // add GitHub or homepage URL here
+        link: "https://ranjaykrishna.com/index.html"
       },
       {
         name: "Shivani Poddar",
@@ -98,22 +104,25 @@
       }
     ];
 
-    // ====== RENDER SPEAKERS ======
+    const ensureAbsolute = (url) => /^(https?:)?\/\//i.test(url) ? url : `https://${url}`;
+
     const grid = document.getElementById('speakerGrid');
     grid.innerHTML = '';
+
     SPEAKERS.forEach(p => {
-      // Wrap entire card in a clickable link
       const a = document.createElement('a');
-      a.href = p.link || '#';
+      a.href = p.link ? ensureAbsolute(p.link) : '#';
       a.target = '_blank';
-      a.rel = 'noopener';
+      a.rel = 'noopener noreferrer';
       a.className = 'person-card';
-      a.setAttribute('aria-label', p.name + ' — ' + (p.role || ''));
+      a.setAttribute('aria-label', `${p.name} — ${p.role||''}`);
 
       const img = document.createElement('img');
       img.className = 'avatar';
       img.alt = p.name;
+      img.loading = 'lazy';
       img.src = p.img;
+      img.onerror = () => { img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160"><rect width="100%" height="100%" fill="%23e5e7eb"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="12" fill="%239ca3af">No image</text></svg>'; };
 
       const name = document.createElement('h4'); name.textContent = p.name;
       const role = document.createElement('div'); role.className = 'role'; role.textContent = p.role || '';
@@ -123,7 +132,6 @@
       a.appendChild(name);
       a.appendChild(role);
       a.appendChild(bio);
-
       grid.appendChild(a);
     });
   </script>
