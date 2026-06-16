@@ -13,14 +13,12 @@
       scroll-behavior: smooth;
       scroll-padding-top: 100px; /* Account for fixed nav */
     }
-    
     body {
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; 
-      color:#111827; 
-      margin:0; 
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:#111827;
+      margin:0;
       background:#fff;
     }
-    
     h1,h2 {font-family: "Source Serif 4", serif;}
     h3 {font-family: "Source Serif 4", serif; font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; color: #1e293b;}
     h4 {font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.8rem; color: #1e293b; font-weight: 600;}
@@ -37,8 +35,8 @@
     .hero {position:relative; background-image:url('./assets/dubai_faint_bg.jpeg?v=1'); background-size:cover; background-position:center; background-repeat:no-repeat; color:#fff; text-align:center; padding:120px 20px; min-height:360px; border-bottom:1px solid rgba(255,255,255,.2); overflow:hidden}
     .hero::before{content:'';position:absolute;inset:0; background:rgba(0,0,0,.35); backdrop-filter:brightness(.8); z-index:0}
     .hero .container{position:relative; z-index:1}
-    .hero h1{font-size:3.2rem; margin-bottom:15px; text-shadow:0 3px 8px rgba(0,0,0,.5)}
-    .hero h3{font-weight:500; margin-top:0; font-size:1.6rem; text-shadow:0 2px 6px rgba(0,0,0,.4)}
+    .hero h1{font-size:3.2rem; margin-bottom:15px; text-shadow:0 3px 8px rgba(0,0,0,.5); color:#fff;}
+    .hero h3{font-weight:500; margin-top:0; font-size:1.6rem; text-shadow:0 2px 6px rgba(0,0,0,.4); color:#fff;}
 
     /* Top Navigation - Fixed */
     .top-nav {
@@ -143,24 +141,6 @@
     }
     .guidelines-box h3 {margin-top: 0; color: #1e293b;}
     .guidelines-box ul {margin: 1rem 0;}
-    .fast-track {
-      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-      border: 2px solid #f59e0b;
-      padding: 24px;
-      margin: 2rem 0;
-      border-radius: 12px;
-    }
-    .fast-track h3 {
-      margin-top: 0; 
-      color: #92400e;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .fast-track h3::before {
-      content: '✴️';
-      font-size: 1.2em;
-    }
     .section-divider {
       border: 0;
       height: 2px;
@@ -174,19 +154,16 @@
       grid-template-columns:repeat(3, 1fr);
       gap:18px;
     }
-
     @media (max-width:900px){
       .people-grid{
         grid-template-columns:repeat(2, 1fr);
       }
     }
-
     @media (max-width:600px){
       .people-grid{
         grid-template-columns:1fr;
       }
     }
-
     .person-card{
       display:flex;
       flex-direction:column;
@@ -201,7 +178,6 @@
       transition:transform .12s ease, box-shadow .12s ease;
       cursor:pointer;
     }
-
     a.person-card,
     a.person-card:link,
     a.person-card:visited,
@@ -210,12 +186,10 @@
       text-decoration:none;
       color:inherit;
     }
-
     a.person-card:hover{
       transform:translateY(-2px);
       box-shadow:0 8px 20px rgba(0,0,0,.08);
     }
-
     .avatar{
       width:200px;
       height:200px;
@@ -261,8 +235,8 @@
     <section id="home">
       <div class="hero">
         <div class="container">
-          <h1>LLM & Agents for Recommendation Systems</h1>
-          <h3>The Web Conference 2026 (WWW'26) • Dubai, UAE</h3>
+          <h1>Workshop on LLM &amp; Agents for Recommendation Systems</h1>
+          <h3>The Web Conference 2026 (WWW'26) • April 13–17, 2026 • Dubai, UAE</h3>
         </div>
       </div>
 
@@ -271,13 +245,7 @@
           <div class="abstract-card">
             <h2>Abstract</h2>
             <p>
-              Recommendation systems underpin much of the web economy—from content feeds and e-commerce to advertising and social interaction. As Large Language Models (LLMs) and autonomous agents increasingly power these systems, we are witnessing a shift from centralized recommendation pipelines to agentic ecosystems that plan, negotiate, and interact across product discovery, personalization, and fulfillment.
-            </p>
-            <p>
-              LLMs introduce new capabilities for reasoning over multi-modal data, grounding recommendations in natural language, and enabling conversational, zero-shot personalization. Meanwhile, multi-agent systems unlock emergent coordination across buyers, sellers, and platforms—yet raise challenges of interpretability, robustness, and evaluation. Traditional short-term metrics like clicks and conversions fail to capture coordination quality, long-horizon trust, or fairness across stakeholders.
-            </p>
-            <p>
-              This workshop convenes the communities of recommendation systems, multi-agent learning, information retrieval, and mechanism design to define principles for transparent, scalable, and responsible agent-driven personalization. We invite work on architectures for LLM-integrated recommendation, agent collaboration, retrieval-augmented generation, reasoning and alignment, evaluation frameworks, fairness and trust, and real-world deployment case studies. By bridging academic insights with industry deployments, this forum seeks to shape the next generation of LLM and agent-based recommendation systems—systems that are adaptive, explainable, and aligned with user and societal welfare.
+              Recommendation systems power much of the web economy, influencing how people discover products, content, and services. With the emergence of Large Language Models and autonomous agents, these systems are undergoing a major shift from traditional centralized pipelines to agentic ecosystems that can plan, reason, negotiate, and interact across the entire journey of discovery, personalization, and fulfillment. Large Language Models introduce new capabilities for multimodal reasoning, natural language grounding, and conversational personalization, enabling systems that adapt and respond with greater context and coherence. At the same time, multi agent systems create opportunities for richer collaboration among buyers, sellers, and platforms, while also raising important challenges in interpretability, robustness, governance, and evaluation. Conventional short term metrics such as clicks and conversions are no longer sufficient to measure coordination quality, long horizon impact, trust, or fairness across stakeholders. This workshop brings together researchers and practitioners in recommendation systems, multi agent learning, information retrieval, and mechanism design to explore principles for transparent, scalable, and responsible agent driven personalization. Through contributions on architectures, evaluation, trust, fairness, and real world deployments, the workshop aims to shape the next generation of adaptive, explainable, and societally aligned recommendation ecosystems.
             </p>
           </div>
         </div>
@@ -298,16 +266,16 @@
         <h2>Call for Papers</h2>
         <div class="cfp-content">
           <p>
-            We invite submissions exploring the intersection of Large Language Models (LLMs), intelligent agents, 
-            and recommendation systems. This workshop aims to advance the understanding of how LLM-based agents 
+            We invite submissions exploring the intersection of Large Language Models (LLMs), intelligent agents,
+            and recommendation systems. This workshop aims to advance the understanding of how LLM-based agents
             can enhance personalization, user interaction, and decision-making in recommendation systems.
           </p>
 
           <div class="important-dates">
             <h3>Important Dates</h3>
             <ul>
-              <li><span class="date-label">Paper Submission Deadline:</span><span class="date-value">December 18, 2025</span></li>
-              <li><span class="date-label">Notification of Acceptance:</span><span class="date-value">January 13, 2026</span></li>
+              <li><span class="date-label">Paper Submission Deadline:</span><span class="date-value">January 12, 2026</span></li>
+              <li><span class="date-label">Notification of Acceptance:</span><span class="date-value">January 26, 2026</span></li>
               <li><span class="date-label">Camera-Ready Submission:</span><span class="date-value">February 2, 2026</span></li>
               <li><span class="date-label">Workshop Date:</span><span class="date-value">April 13 - 14, 2026 (TBD)</span></li>
             </ul>
@@ -346,29 +314,21 @@
 
             <p style="margin-top: 1.5rem;"><strong>Submission Portal:</strong></p>
             <p>
-              Please submit your papers via our submission portal: 
-              <a href="https://urldefense.com/v3/__https://openreview.net/group?id=ACM.org*TheWebConf*2026*Workshop*LARS*tab-your-consoles__;Ly8vLyM!!IfjTnhH9!U6wD-HSyEYAeGlXwOazYN7iEcpASfvqr7QZgrcbgAJa6x9C3lDPKUEHYAPkbfWMYwiCtx3R8tbE4QlrdPws$" class="submission-link" target="_blank" rel="noopener noreferrer">Submit Paper on OpenReview</a>
+              Please submit your papers via our submission portal:
+              <a href="https://urldefense.com/v3/__https://openreview.net/group?id=ACM.org*TheWebConf*2026*Workshop*LARS*tab-your-consoles__;Ly8vLyM!!IfjTnhH9!U6wD-HSyEYAeGlXwOazYN7iEcpASfvqr7QZgrcbgAJa6x9C3lDPKUEHYAPkbfWMYwiCtx3R8tbE4QlrdPws$"
+                 class="submission-link" target="_blank" rel="noopener noreferrer">Submit Paper on OpenReview</a>
             </p>
 
             <p style="margin-top: 1.5rem;"><strong>Review Process:</strong></p>
             <ul>
               <li>Each submission will be reviewed by at least 2 program committee members</li>
               <li>Reviews will focus on originality, technical quality, relevance, and clarity</li>
-              <li>Authors will have the opportunity to respond to reviews before final decisions</li>
             </ul>
-          </div>
-
-          <div class="fast-track">
-            <h3>Fast-Track Publication Opportunity</h3>
-            <p>
-              Selected papers from the workshop will be invited for fast-track submission to a special issue 
-              in a top-tier journal (details to be announced).
-            </p>
           </div>
 
           <div class="highlight-box">
             <h3>Questions?</h3>
-            <p>For any inquiries regarding submissions, please contact the organizing committee at: <strong>wwwlars2026@gmail.com</strong></p>
+            <p>For any inquiries regarding submissions, please contact the organizing committee at: <strong>llmandagents4recsys@googlegroups.com</strong></p>
           </div>
         </div>
       </div>
@@ -390,23 +350,26 @@
           <tbody>
             <tr style="background: #f9fafb;">
               <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">09:00 – 09:15</td>
-              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Opening Remarks & Workshop Overview</td>
+              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Opening Remarks &amp; Workshop Overview</td>
               <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Workshop Organizers</td>
             </tr>
             <tr>
               <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">09:15 – 10:00</td>
-              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Keynote Talk 1 (30 min talk + 15 min Q&A)</td>
+              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Keynote Talk 1 (30 min talk + 15 min Q&amp;A)</td>
               <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">TBD</td>
             </tr>
             <tr style="background: #f9fafb;">
               <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">10:00 – 10:45</td>
-              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Keynote Talk 2 (30 min talk + 15 min Q&A)</td>
-              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">TBD</td>
+              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Panel Discussion 1</td>
+              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">
+                <strong>Lead Coordinators:</strong> Qi Xu &amp; Zhigang Hua<br>
+                <strong>Panelist:</strong> Prof. Jiaxuan You
+              </td>
             </tr>
             <tr>
               <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">10:45 – 11:15</td>
               <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Coffee Break</td>
-              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Networking & Refreshments</td>
+              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Networking &amp; Refreshments</td>
             </tr>
             <tr style="background: #f9fafb;">
               <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">11:15 – 12:15</td>
@@ -415,12 +378,12 @@
             </tr>
             <tr>
               <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">12:15 – 13:30</td>
-              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Lunch & Poster Session</td>
+              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Lunch &amp; Poster Session</td>
               <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Informal Discussions</td>
             </tr>
             <tr style="background: #f9fafb;">
               <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">13:30 – 14:15</td>
-              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Keynote Talk 3 (30 min talk + 15 min Q&A)</td>
+              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Keynote Talk 3 (30 min talk + 15 min Q&amp;A)</td>
               <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">TBD</td>
             </tr>
             <tr>
@@ -431,17 +394,20 @@
             <tr style="background: #f9fafb;">
               <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">15:15 – 15:45</td>
               <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Coffee Break</td>
-              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Networking & Refreshments</td>
+              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Networking &amp; Refreshments</td>
             </tr>
             <tr>
               <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">15:45 – 16:30</td>
-              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Keynote Talk 4 (30 min talk + 15 min Q&A)</td>
+              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Keynote Talk 4 (30 min talk + 15 min Q&amp;A)</td>
               <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">TBD</td>
             </tr>
             <tr style="background: #f9fafb;">
               <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">16:30 – 17:15</td>
-              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Panel: Building Trustworthy Agent Marketplaces</td>
-              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Trust, evaluation, governance, deployment challenges</td>
+              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">Panel Discussion 2</td>
+              <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">
+                <strong>Lead Coordinators:</strong> Keerthi Gopalakrishnan &amp; Aysenur Inan<br>
+                <strong>Panelists:</strong> Prof. Ranjay Krishna, Prof. Hanan Salam, Shivani Poddar, Vasu Sharma
+              </td>
             </tr>
             <tr>
               <td style="padding: 12px;">17:15 – 17:30</td>
@@ -460,46 +426,50 @@
         <h2>Organizing Committee</h2>
 
         <h3 style="margin-top:32px;">Organizing Chairs</h3>
+        <p style="margin-top:4px; font-size:0.9rem; color:#6b7280;">
+          * Lead organizers ( Equal Contribution ; Random Order )
+        </p>
         <div class="people-grid" id="chairsGrid"></div>
 
-        <h3 style="margin-top:48px;">Organizing Committee Members</h3>
+        <h3 style="margin-top:48px;">
+          Organizing Committee Members
+          <span style="font-size:0.85rem; font-weight:400; color:#6b7280;">(Random order)</span>
+        </h3>
         <div class="people-grid" id="committeeGrid"></div>
 
-        <h3 style="margin-top:48px;">Program Committee</h3>
+        <h3 style="margin-top:48px;">
+          Program Committee
+          <span style="font-size:0.85rem; font-weight:400; color:#6b7280;">(Random order)</span>
+        </h3>
         <ul class="pc-list">
           <li>Rong Jin (Chair), Meta Ranking AI</li>
           <li>Najmeh Forouzandehmehr (Chair), Walmart Global Tech</li>
-
+          <li>Luke Simon, Meta Ranking AI</li>
           <li>Keerthi Gopalakrishnan, Walmart Global Tech</li>
-          <li>Qi Xu, Meta Ranking AI</li>
-          <li>Aysenur Inan, Walmart Global Tech</li>
           <li>Zhigang Hua, Meta Ranking AI</li>
+          <li>Aysenur Inan, Walmart Global Tech</li>
+          <li>Qi Xu, Meta Ranking AI</li>
           <li>Luyi Ma, Walmart Global Tech</li>
+          <li>Jiaxuan You, University of Illinois Urbana-Champaign</li>
           <li>Prabhat Agarwal, OpenAI</li>
+          <li>Jiliang Tang, Michigan State University</li>
           <li>Shradha Sehgal, Netflix</li>
+          <li>Shuang Yang, Meta Ranking AI</li>
           <li>Kai Zhao, Walmart Global Tech</li>
+          <li>Jiyan Yang, Meta Ranking AI</li>
           <li>Kamilia Ahmadi, Warner Bros. Discovery</li>
           <li>Hao Wang, Rutgers University</li>
-          <li>Jiaxuan You, University of Illinois Urbana-Champaign</li>
+          <li>Zhuang Liu, Princeton University</li>
+          <li>Fuchun Peng, Meta Ranking AI</li>
           <li>Yashar Deldjoo, Polytechnic University of Bari</li>
-          <li>Shuang Yang, Meta Ranking AI</li>
-
-          <li>Cláudio T. Silva, New York University</li>
-          <li>Sasu Tarkoma, University of Helsinki</li>
-          <li>Juliana Freire, New York University</li>
+          <li>Xi Liu, Meta Ranking AI</li>
           <li>Khadija Khaldi, Meta</li>
           <li>Hanyu Li, Pinterest</li>
+          <li>Jun Liu, Meta Ranking AI</li>
           <li>Shreya Singh, Google DeepMind</li>
           <li>Yi-Ping Hsu, Genova Labs</li>
           <li>Xiangyi Chen, Pinterest</li>
-
-          <li>Jiliang Tang, Michigan State University</li>
-          <li>Jiyan Yang, Meta Ranking AI</li>
-          <li>Zhuang Liu, Princeton University</li>
-          <li>Fuchun Peng, Meta Ranking AI</li>
-          <li>Raghuveer Chanda, Google</li>
-          <li>Jun Shi, Airbnb</li>
-          <li>John Liu, LinkedIn</li>
+          <li>Yihan Cao, LinkedIn</li>
         </ul>
       </div>
     </section>
@@ -510,288 +480,319 @@
   </footer>
 
   <script>
-  // Speaker data
-  const SPEAKERS = [
-    {
-      name: "Prof. Ranjay Krishna",
-      role: "University of Washington — RAIVN Lab Co-Director",
-      img: "./assets/speakers/ranjay-krishna.jpeg",
-      bio: "Assistant Professor and co-director of the RAIVN Lab. His work spans vision, language, and human–AI interaction.",
-      link: "https://ranjaykrishna.com/index.html"
-    },
-    {
-      name: "Shivani Poddar",
-      role: "Google DeepMind — Jules GenAI Engineering Lead",
-      img: "./assets/speakers/Shivani-Poddar.jpeg",
-      bio: "Engineering lead building large-scale, safety-aware agent systems for user experiences; previously multi-agent conversational AI at Meta.",
-      link: "https://www.linkedin.com/in/shivani-poddar/"
-    },
-    {
-      name: "Prof. Hanan Salam",
-      role: "NYU Abu Dhabi — SMART Lab Director",
-      img: "./assets/speakers/Hanan-Salam.jpeg",
-      bio: "Assistant Professor and SMART Lab Director focusing on trust, coordination, and explainability in multi-agent systems.",
-      link: "http://www.hanansalam.com/"
-    },
-    {
-      name: "Prof. Jiaxuan You",
-      role: "University of Illinois Urbana-Champaign — Assistant Professor",
-      img: "./assets/speakers/jiaxuan-you.jpeg",
-      bio: "Assistant Professor at UIUC CS working on graph learning, foundation models, and agents; 40+ papers across major ML conferences.",
-      link: "https://www.linkedin.com/in/jiaxuanyou/"
-    },
-    {
-      name: "Vasu Sharma",
-      role: "Meta — Research Scientist, Recommender Systems",
-      img: "./assets/speakers/Vasu-Sharma.jpeg",
-      bio: "Research Scientist focusing on large-scale ranking, multi-objective optimization, and long-term engagement in recommender systems.",
-      link: "https://vasusharma.github.io/"
-    }
-  ];
-
-  // Organizing Committee Arrays
-  const ORGANIZING_CHAIRS = [
-    {
-      name: "Keerthi Gopalakrishnan",
-      area: "Personalization Research",
-      company: "Walmart Global Tech",
-      email: "k.goppalakrishnan@walmart.com",
-      img: "./assets/org_com/keerthi-gopalakrishnan.jpeg"
-    },
-    {
-      name: "Qi Xu",
-      area: "Ranking & Recommendations",
-      company: "Meta AI",
-      email: "xuqi@meta.com",
-      img: "./assets/org_com/qi-xu.jpeg"
-    },
-    {
-      name: "Aysenur Inan",
-      area: "Personalization Research",
-      company: "Walmart Global Tech",
-      email: "aysenur.inan@walmart.com",
-      img: "./assets/org_com/aysenur-inan.jpeg"
-    },
-    {
-      name: "Zhigang Hua",
-      area: "Ranking & Recommender Systems",
-      company: "Meta AI",
-      email: "zhua@meta.com",
-      img: "./assets/org_com/zhigang-hua.jpeg"
-    },
-    {
-      name: "Luyi Ma",
-      area: "Personalization Research",
-      company: "Walmart Global Tech",
-      email: "luyi.ma@walmart.com",
-      img: "./assets/org_com/luyi-ma.jpeg"
-    }
-  ];
-
-  const ORGANIZING_COMMITTEE = [
-    {
-      name: "Prabhat Agarwal",
-      area: "AI / ML",
-      company: "OpenAI",
-      img: "./assets/org_com/prabhat-agarwal.jpeg"
-    },
-    {
-      name: "Shradha Sehgal",
-      area: "Personalization / ML",
-      company: "Netflix",
-      img: "./assets/org_com/shradha-sehgal.jpeg"
-    },
-    {
-      name: "Kai Zhao",
-      area: "Personalization Research",
-      company: "Walmart Global Tech",
-      img: "./assets/org_com/kai-zhao.jpeg"
-    },
-    {
-      name: "Kamilia Ahmadi",
-      area: "Recommender Systems / ML",
-      company: "Warner Bros. Discovery",
-      img: "./assets/org_com/kamilia-ahmadi.jpeg"
-    },
-    {
-      name: "Hao Wang",
-      area: "Recommender Systems",
-      company: "Rutgers University",
-      img: "./assets/org_com/hao-wang.jpeg"
-    },
-    {
-      name: "Jiaxuan You",
-      area: "Graph Learning / Foundation Models",
-      company: "University of Illinois Urbana-Champaign",
-      img: "./assets/org_com/jiaxuan-you.jpeg"
-    },
-    {
-      name: "Yashar Deldjoo",
-      area: "Recommender Systems",
-      company: "Polytechnic University of Bari",
-      img: "./assets/org_com/yashar-deldjoo.jpeg"
-    },
-    {
-      name: "Shuang Yang",
-      area: "Ranking & Recommender Systems",
-      company: "Meta AI",
-      img: "./assets/org_com/shuang-yang.jpeg"
-    },
-    {
-      name: "Rong Jin",
-      area: "Ranking / AI Research",
-      company: "Meta AI",
-      img: "./assets/org_com/rong-jin.jpeg"
-    }
-  ];
-
-  function loadSpeakerImage(imgEl, basePathOrFull) {
-    const hasExt = /\.[a-z]{3,4}$/i.test(basePathOrFull);
-    const base = hasExt ? basePathOrFull.replace(/\.[^.]+$/, '') : basePathOrFull;
-    const exts = ['.jpg','.jpeg','.png','.JPG','.JPEG','.PNG'];
-    const candidates = hasExt
-      ? [basePathOrFull, ...exts.filter(e => !basePathOrFull.endsWith(e)).map(e => base + e)]
-      : exts.map(e => base + e);
-
-    let i = 0;
-    const tryNext = () => {
-      if (i >= candidates.length) {
-        imgEl.removeAttribute('srcset');
-        imgEl.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="100%" height="100%" fill="%23e5e7eb"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="12" fill="%239ca3af">No image</text></svg>';
-        return;
+    // Speaker data
+    const SPEAKERS = [
+      {
+        name: "Prof. Ranjay Krishna",
+        role: "University of Washington — RAIVN Lab Co-Director",
+        img: "./assets/speakers/ranjay-krishna.jpeg",
+        bio: "Assistant Professor and co-director of the RAIVN Lab. His work spans vision, language, and human–AI interaction.",
+        link: "https://ranjaykrishna.com/index.html"
+      },
+      {
+        name: "Shivani Poddar",
+        role: "Google DeepMind — Jules GenAI Engineering Lead",
+        img: "./assets/speakers/Shivani-Poddar.jpeg",
+        bio: "Engineering lead building large-scale, safety-aware agent systems for user experiences; previously multi-agent conversational AI at Meta.",
+        link: "https://www.linkedin.com/in/shivani-poddar/"
+      },
+      {
+        name: "Prof. Hanan Salam",
+        role: "NYU Abu Dhabi — SMART Lab Director",
+        img: "./assets/speakers/Hanan-Salam.jpeg",
+        bio: "Assistant Professor and SMART Lab Director focusing on trust, coordination, and explainability in multi-agent systems.",
+        link: "http://www.hanansalam.com/"
+      },
+      {
+        name: "Prof. Jiaxuan You",
+        role: "University of Illinois Urbana-Champaign — Assistant Professor",
+        img: "./assets/speakers/jiaxuan-you.jpeg",
+        bio: "Assistant Professor at UIUC CS working on graph learning, foundation models, and agents.",
+        link: "https://www.linkedin.com/in/jiaxuanyou/"
+      },
+      {
+        name: "Vasu Sharma",
+        role: "Tesla — Research Scientist - Previously Meta FAIR",
+        img: "./assets/speakers/Vasu-Sharma.jpeg",
+        bio: "Research Scientist focusing on multimodal foundational models, multi-objective optimization, and long-term engagement in recommender systems.",
+        link: "https://vasusharma.github.io/"
       }
-      imgEl.src = candidates[i++];
-      imgEl.onerror = tryNext;
-    };
-    tryNext();
-  }
+    ];
 
-  const grid = document.getElementById('speakerGrid');
-  
-  if (grid) grid.innerHTML = '';
+    // Organizing Committee Arrays
+    const ORGANIZING_CHAIRS = [
+      {
+        name: "Keerthi Gopalakrishnan",
+        area: "Personalization Research",
+        company: "Walmart Global Tech",
+        email: "",
+        img: "./assets/org_com/keerthi-gopalakrishnan.jpeg",
+        lead: true,
+        link: "https://www.linkedin.com/in/keerthi-g/"
+      },
+      {
+        name: "Qi Xu",
+        area: "Ranking AI",
+        company: "Meta",
+        email: "",
+        img: "./assets/org_com/qi-xu.jpeg",
+        lead: true,
+        link: "https://www.linkedin.com/in/qi-xu-109140b6/"
+      },
+      {
+        name: "Aysenur Inan",
+        area: "Personalization Research",
+        company: "Walmart Global Tech",
+        email: "",
+        img: "./assets/org_com/aysenur-inan.jpeg",
+        lead: true,
+        link: "https://www.linkedin.com/in/aysenurinan/"
+      },
+      {
+        name: "Zhigang Hua",
+        area: "Ranking AI",
+        company: "Meta",
+        email: "",
+        img: "./assets/org_com/zhigang-hua.jpeg",
+        lead: true,
+        link: "https://www.linkedin.com/in/zhigang-w-61319512/"
+      },
+      {
+        name: "Shuang Yang",
+        area: "Ranking AI",
+        company: "Meta",
+        email: "",
+        img: "./assets/org_com/shuyang-yuang.jpeg",
+        lead: false,
+        link: "https://www.linkedin.com/in/eeshyang/"
+      },
+      {
+        name: "Luyi Ma",
+        area: "Personalization Research",
+        company: "Walmart Global Tech",
+        email: "",
+        img: "./assets/org_com/luyi-ma.jpeg",
+        lead: false,
+        link: "https://www.linkedin.com/in/luyima-site/"
+      },
+      {
+        name: "Hao Wang",
+        area: "Recommender Systems",
+        company: "Rutgers University",
+        email: "",
+        img: "./assets/org_com/hao-wang.jpeg",
+        lead: false,
+        link: "https://www.linkedin.com/in/hao-wang-47016b38/"
+      },
+      {
+        name: "Prabhat Agarwal",
+        area: "AI / ML",
+        company: "OpenAI",
+        email: "",
+        img: "./assets/org_com/prabhat-agarwal.jpeg",
+        lead: false,
+        link: "https://www.linkedin.com/in/agarwal-prabhat/"
+      }
+    ];
 
-  function createSpeakerCard(p) {
-    const a = document.createElement('a');
-    a.href = /^(https?:)?\/{2}/i.test(p.link) ? p.link : `https://${p.link || ''}`;
-    a.target = '_blank';
-    a.rel = 'noopener noreferrer';
-    a.className = 'person-card';
-    a.setAttribute('aria-label', `${p.name} — ${p.role||''}`);
+    const ORGANIZING_COMMITTEE = [
+      {
+        name: "Shradha Sehgal",
+        area: "Personalization / ML",
+        company: "Netflix",
+        img: "./assets/org_com/shradha-sehgal.jpeg",
+        link: "https://www.linkedin.com/in/shradha-sehgal/"
+      },
+      {
+        name: "Kai Zhao",
+        area: "Agentic AI",
+        company: "Workday",
+        img: "./assets/org_com/kai-zhao.jpeg",
+        link: "https://www.linkedin.com/in/kai-zhao-542b7b82/"
+      },
+      {
+        name: "Kamilia Ahmadi",
+        area: "Recommender Systems / ML",
+        company: "Warner Bros. Discovery",
+        img: "./assets/org_com/kamilia-ahmadi.jpeg",
+        link: "https://www.linkedin.com/in/kamilia-ahmadi-4b343567/"
+      },
+      {
+        name: "Yashar Deldjoo",
+        area: "Recommender Systems",
+        company: "Polytechnic University of Bari",
+        img: "./assets/org_com/yashar-d.jpeg",
+        link: "https://www.linkedin.com/in/yashar-deldjoo-05924057/"
+      },
+      {
+        name: "Rong Jin",
+        area: "Ranking AI",
+        company: "Meta",
+        img: "./assets/org_com/rong-jin.jpeg",
+        link: "https://scholar.google.com/citations?user=CS5uNscAAAAJ&hl=zh-CN"
+      },
+      {
+        name: "Luke Simon",
+        area: "Ranking AI",
+        company: "Meta",
+        img: "./assets/org_com/luke-simon.jpeg",
+        link: "https://www.linkedin.com/in/dr-luke-simon/"
+      }
+      
+    ];
 
-    const img = document.createElement('img');
-    img.className = 'avatar';
-    img.alt = p.name;
-    img.loading = 'lazy';
+    function loadSpeakerImage(imgEl, basePathOrFull) {
+      const hasExt = /\.[a-z]{3,4}$/i.test(basePathOrFull);
+      const base = hasExt ? basePathOrFull.replace(/\.[^.]+$/, '') : basePathOrFull;
+      const exts = ['.jpg','.jpeg','.png','.JPG','.JPEG','.PNG'];
+      const candidates = hasExt
+        ? [basePathOrFull, ...exts.filter(e => !basePathOrFull.endsWith(e)).map(e => base + e)]
+        : exts.map(e => base + e);
 
-    loadSpeakerImage(img, p.img);
-
-    const name = document.createElement('h4'); name.textContent = p.name;
-    const role = document.createElement('div'); role.className = 'role'; role.textContent = p.role || '';
-    const bio = document.createElement('div'); bio.className = 'bio'; bio.textContent = p.bio || '';
-
-    a.appendChild(img);
-    a.appendChild(name);
-    a.appendChild(role);
-    a.appendChild(bio);
-    
-    return a;
-  }
-
-  function renderSpeakers(container) {
-    SPEAKERS.forEach(p => container.appendChild(createSpeakerCard(p)));
-  }
-  
-  if (grid) renderSpeakers(grid);
-
-  // Organizer cards
-  const chairsGrid = document.getElementById('chairsGrid');
-  const committeeGrid = document.getElementById('committeeGrid');
-
-  function createOrganizerCard(p, {showEmail = false} = {}) {
-    const card = document.createElement('div');
-    card.className = 'person-card';
-
-    const img = document.createElement('img');
-    img.className = 'avatar';
-    img.alt = p.name;
-    img.loading = 'lazy';
-    loadSpeakerImage(img, p.img);
-
-    const name = document.createElement('h4'); name.textContent = p.name;
-    const area = document.createElement('div'); area.className = 'role'; area.textContent = p.area || '';
-    const company = document.createElement('div'); company.className = 'bio'; company.textContent = p.company || '';
-
-    card.appendChild(img);
-    card.appendChild(name);
-    card.appendChild(area);
-    card.appendChild(company);
-
-    if (showEmail && p.email) {
-      const email = document.createElement('div');
-      email.style.fontSize = '0.9rem';
-      email.style.color = '#4b5563';
-      email.textContent = p.email;
-      card.appendChild(email);
+      let i = 0;
+      const tryNext = () => {
+        if (i >= candidates.length) {
+          imgEl.removeAttribute('srcset');
+          imgEl.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="100%" height="100%" fill="%23e5e7eb"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="12" fill="%239ca3af">No image</text></svg>';
+          return;
+        }
+        imgEl.src = candidates[i++];
+        imgEl.onerror = tryNext;
+      };
+      tryNext();
     }
 
-    return card;
-  }
+    const grid = document.getElementById('speakerGrid');
+    if (grid) grid.innerHTML = '';
 
-  if (chairsGrid) {
-    ORGANIZING_CHAIRS.forEach(p => chairsGrid.appendChild(createOrganizerCard(p, {showEmail:true})));
-  }
-  if (committeeGrid) {
-    ORGANIZING_COMMITTEE.forEach(p => committeeGrid.appendChild(createOrganizerCard(p)));
-  }
+    function createSpeakerCard(p) {
+      const a = document.createElement('a');
+      a.href = /^(https?:)?\/{2}/i.test(p.link) ? p.link : ('https://' + (p.link || ''));
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.className = 'person-card';
+      a.setAttribute('aria-label', `${p.name} — ${p.role || ''}`);
 
-  // Scroll spy and navigation functionality
-  const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('section[id]');
+      const img = document.createElement('img');
+      img.className = 'avatar';
+      img.alt = p.name;
+      img.loading = 'lazy';
+      loadSpeakerImage(img, p.img);
 
-  // Update active nav link based on scroll position
-  function updateActiveNav() {
-    let current = '';
-    
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (pageYOffset >= sectionTop - 150) {
-        current = section.getAttribute('id');
+      const name = document.createElement('h4');
+      name.textContent = p.name;
+
+      const role = document.createElement('div');
+      role.className = 'role';
+      role.textContent = p.role || '';
+
+      const bio = document.createElement('div');
+      bio.className = 'bio';
+      bio.textContent = p.bio || '';
+
+      a.appendChild(img);
+      a.appendChild(name);
+      a.appendChild(role);
+      a.appendChild(bio);
+      return a;
+    }
+
+    function renderSpeakers(container) {
+      SPEAKERS.forEach(p => container.appendChild(createSpeakerCard(p)));
+    }
+
+    if (grid) renderSpeakers(grid);
+
+    // Organizer cards
+    const chairsGrid = document.getElementById('chairsGrid');
+    const committeeGrid = document.getElementById('committeeGrid');
+
+    function createOrganizerCard(p, {showEmail = false} = {}) {
+      const wrapper = p.link ? document.createElement('a') : document.createElement('div');
+      wrapper.className = 'person-card';
+
+      if (p.link) {
+        wrapper.href = /^(https?:)?\/{2}/i.test(p.link) ? p.link : ('https://' + p.link);
+        wrapper.target = '_blank';
+        wrapper.rel = 'noopener noreferrer';
       }
-    });
+
+      const img = document.createElement('img');
+      img.className = 'avatar';
+      img.alt = p.name;
+      img.loading = 'lazy';
+      loadSpeakerImage(img, p.img);
+
+      const nameEl = document.createElement('h4');
+      nameEl.textContent = p.name + (p.lead ? ' *' : '');
+
+      const area = document.createElement('div');
+      area.className = 'role';
+      area.textContent = p.area || '';
+
+      const company = document.createElement('div');
+      company.className = 'bio';
+      company.textContent = p.company || '';
+
+      wrapper.appendChild(img);
+      wrapper.appendChild(nameEl);
+      wrapper.appendChild(area);
+      wrapper.appendChild(company);
+
+      if (showEmail && p.email) {
+        const email = document.createElement('div');
+        email.style.fontSize = '0.9rem';
+        email.style.color = '#4b5563';
+        email.textContent = p.email;
+        wrapper.appendChild(email);
+      }
+
+      return wrapper;
+    }
+
+    if (chairsGrid) {
+      ORGANIZING_CHAIRS.forEach(p => chairsGrid.appendChild(createOrganizerCard(p, {showEmail:true})));
+    }
+    if (committeeGrid) {
+      ORGANIZING_COMMITTEE.forEach(p => committeeGrid.appendChild(createOrganizerCard(p)));
+    }
+
+    // Scroll spy and navigation functionality
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+
+    function updateActiveNav() {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.pageYOffset >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-section') === current) {
+          link.classList.add('active');
+        }
+      });
+    }
 
     navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('data-section') === current) {
-        link.classList.add('active');
-      }
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('data-section');
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          const yOffset = -80; // Account for fixed nav height
+          const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      });
     });
-  }
 
-  // Smooth scroll to section on click
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('data-section');
-      const targetSection = document.getElementById(targetId);
-      
-      if (targetSection) {
-        const yOffset = -80; // Account for fixed nav height
-        const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        
-        window.scrollTo({
-          top: y,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-
-  // Listen for scroll events
-  window.addEventListener('scroll', updateActiveNav);
-  
-  // Set initial active state
-  updateActiveNav();
+    window.addEventListener('scroll', updateActiveNav);
+    updateActiveNav();
   </script>
 </body>
 </html>
